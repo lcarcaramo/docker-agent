@@ -55,10 +55,10 @@ suite_start
                 export TEST_AGENT_LOGS=$(docker logs test-jenkins-agent)
                 
                 if [ "$TEST_AGENT_LOGS" == "$EXPECTED_TEST_AGENT_LOGS" ]; then
-                        echo "Success"
+                        print_success "Success! quay.io/ibmz/jenkins-agent:4.3 ran and produced logs indicative of a healthy container."
                 else
-                        echo "Failure"
+                        exit
                 fi
-                # echo $TEST_AGENT_LOGS
-                # docker rm -f test-jenkins-agent
+                
+                docker rm -f test-jenkins-agent
 suite_end
