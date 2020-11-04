@@ -49,7 +49,7 @@ suite_end () {
 
 suite_start
         print_test_case "It can run a Jenkins agent:"
-                timeout 10s docker run -i --rm --name test-jenkins-agent --init "quay.io/ibmz/jenkins-agent:4.3" java -jar /usr/share/jenkins/agent.jar
+                timeout --signal=0 10s docker run -i --rm --name test-jenkins-agent --init "quay.io/ibmz/jenkins-agent:4.3" java -jar /usr/share/jenkins/agent.jar
                 # docker logs test-jenkins-agent
                 #export TEST_AGENT_LOGS=$(docker logs test-jenkins-agent)
                 # echo $TEST_AGENT_LOGS
