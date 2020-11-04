@@ -51,7 +51,7 @@ suite_start
         print_test_case "It can run a Jenkins agent:"
                 docker run -i --name test-jenkins-agent --init "quay.io/ibmz/jenkins-agent:4.3" java -jar /usr/share/jenkins/agent.jar <<< exit || true
                 
-                export EXPECTED_TEST_AGENT_LOGS="<===[JENKINS REMOTING CAPACITY]===>rO0ABXNyABpodWRzb24ucmVtb3RpbmcuQ2FwYWJpbGl0eQAAAAAAAAABAgABSgAEbWFza3hwAAAAAAAAAf4=hello"
+                export EXPECTED_TEST_AGENT_LOGS="<===[JENKINS REMOTING CAPACITY]===>rO0ABXNyABpodWRzb24ucmVtb3RpbmcuQ2FwYWJpbGl0eQAAAAAAAAABAgABSgAEbWFza3hwAAAAAAAAAf4="
                 export TEST_AGENT_LOGS=$(docker logs test-jenkins-agent)
                 
                 if [ "$TEST_AGENT_LOGS" == "$EXPECTED_TEST_AGENT_LOGS" ]; then
