@@ -3,9 +3,9 @@ services:
   - docker
 env:
   global:
-    - TEST_DIR="$PWD/s390x/test/11/alpine"
+    - TEST_DIR="$PWD/s390x/test/11/ubuntu"
     - TEST_SCRIPT="test.sh"
-    - BUILD_DIR="$PWD/s390x/11/alpine"
+    - BUILD_DIR="$PWD/s390x/11/ubuntu"
     - REPO="quay.io/ibmz/jenkins"
     - TAG="$REPO:2.249.2"
 before_script: 
