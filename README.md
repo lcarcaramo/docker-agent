@@ -8,7 +8,6 @@ Jenkins Agent Docker image
 
 This is a base image for Docker, which includes JDK and the Jenkins agent executable (agent.jar).
 This executable is an instance of the [Jenkins Remoting library](https://github.com/jenkinsci/remoting).
-JDK version depends on the image and the platform, see the _Configurations_ section below.
 
 # How to Use This Image
 
