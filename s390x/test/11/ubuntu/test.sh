@@ -54,7 +54,7 @@ suite_start
                 export EXPECTED_TEST_AGENT_LOGS="<===[JENKINS REMOTING CAPACITY]===>rO0ABXNyABpodWRzb24ucmVtb3RpbmcuQ2FwYWJpbGl0eQAAAAAAAAABAgABSgAEbWFza3hwAAAAAAAAAf4="
                 export TEST_AGENT_LOGS=$(docker logs test-jenkins-agent)
                 
-                if ["$TEST_AGENT_LOGS" == "$EXPECTED_TEST_AGENT_LOGS"] then
+                if [ "$TEST_AGENT_LOGS" == "$EXPECTED_TEST_AGENT_LOGS" ]; then
                         echo "Success"
                 else
                         echo "Failure"
