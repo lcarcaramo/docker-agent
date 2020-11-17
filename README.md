@@ -28,7 +28,7 @@ after setting **Remote root directory** to `/home/jenkins/agent`.
 Starting from [Remoting 3.8](https://github.com/jenkinsci/remoting/blob/master/CHANGELOG.md#38) there is a support of Work directories, 
 which provides logging by default and change the JAR Caching behavior.
 
-Call example for Linux:
+Call example:
 
 ```sh
 docker run -i --rm --name agent1 --init -v agent1-workdir:/home/jenkins/agent jenkins/agent java -jar /usr/share/jenkins/agent.jar -workDir /home/jenkins/agent
