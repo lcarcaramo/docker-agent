@@ -1,7 +1,8 @@
 # Tags
-> _Built from [`quay.io/ibmz/openjdk:11.0.8`](https://quay.io/repository/ibmz/openjdk?tab=info)_
--	[`4.3`](https://github.com/lcarcaramo/docker-agent/blob/master/s390x/11/ubuntu/Dockerfile) - [![Build Status](https://travis-ci.com/lcarcaramo/docker-agent.svg?branch=master)](https://travis-ci.com/lcarcaramo/docker-agent)
+> _Built from [`quay.io/ibm/openjdk:11.0.8`](https://quay.io/repository/ibm/openjdk?tab=info)_
+-	`4.3` - [![Build Status](https://travis-ci.com/lcarcaramo/docker-agent.svg?branch=master)](https://travis-ci.com/lcarcaramo/docker-agent)
 
+### __[Original Source Code](https://github.com/jenkinsci/docker-agent)__
 
 Jenkins Agent Docker image
 ===
@@ -17,7 +18,7 @@ In that image, the container is launched externally and attaches to Jenkins.
 This image may instead be used to launch an agent using the **Launch method** of **Launch agent via execution of command on the master**. For example on Linux you can try
 
 ```sh
-docker run -i --rm --name agent --init jenkins/agent java -jar /usr/share/jenkins/agent.jar
+docker run -i --rm --name agent --init quay.io/ibm/jenkins-agent:4.3 java -jar /usr/share/jenkins/agent.jar
 ```
 
 after setting **Remote root directory** to `/home/jenkins/agent`.
@@ -31,7 +32,7 @@ which provides logging by default and change the JAR Caching behavior.
 Call example:
 
 ```sh
-docker run -i --rm --name agent1 --init -v agent1-workdir:/home/jenkins/agent jenkins/agent java -jar /usr/share/jenkins/agent.jar -workDir /home/jenkins/agent
+docker run -i --rm --name agent1 --init -v agent1-workdir:/home/jenkins/agent quay.io/ibm/jenkins-agent:4.3 java -jar /usr/share/jenkins/agent.jar -workDir /home/jenkins/agent
 ```
 
 # License
